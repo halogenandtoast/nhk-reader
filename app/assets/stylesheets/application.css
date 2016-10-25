@@ -56,7 +56,7 @@ article.story {
 @media only screen 
 and (max-device-width : 736px) {
   article.story {
-    font-size: 3em;
+    font-size: 2em;
     width: calc(100% - 100px);
     margin: 0 50px;
   }
