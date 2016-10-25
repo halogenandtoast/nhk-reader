@@ -12,6 +12,7 @@ gem 'nokogiri'
 gem 'sanitize'
 group :development, :test do
   gem 'byebug', platform: :mri
+  gem 'pry'
 end
 group :development do
   gem 'web-console'

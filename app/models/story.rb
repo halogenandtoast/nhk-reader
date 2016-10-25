@@ -1,5 +1,6 @@
 class Story < ApplicationRecord
   scope :by_publication_date, -> { order published_at: :desc }
+  scope :from_today, -> { where(published_at: Time.current.all_day) }
 
   def to_param
     news_id
@@ -10,12 +11,16 @@ class Story < ApplicationRecord
   end
 
   def body
-    if fetched?
-      super
-    else
-      NhkNewsEasy::BodyFetcher.new(url).fetch.tap do |new_body|
-        update(body: new_body, fetched: true)
-      end
+    fetched? ? super : fetch_body
+  end
+
+  private
+
+  def fetch_body
+    fetcher = NhkNewsEasy::BodyFetcher.new(url)
+
+    fetcher.fetch.tap do |new_body|
+      update(body: new_body, fetched: true)
     end
   end
 end

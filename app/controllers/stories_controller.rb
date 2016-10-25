@@ -15,13 +15,14 @@ class StoriesController < ApplicationController
   end
 
   def needs_refresh?
-    Date.today.on_weekday? && Story.where(published_at: Time.current.all_day).none?
+    story_refresher.needs_refresh?
   end
 
   def refresh_stories
-    NhkNewsEasy::Fetcher.new.fetch_stories.each do |story|
-      attributes = { fetched: false }.merge(story.to_h)
-      Story.create_with(attributes).find_or_create_by(news_id: story.id)
-    end
+    story_refresher.refresh
+  end
+
+  def story_refresher
+    @_story_refresher ||= NhkNewsEasy::StoryRefresher.new
   end
 end
