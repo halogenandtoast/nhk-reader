@@ -41,11 +41,22 @@ body {
   display: block;
 }
 
-.story__link--original {
-  text-decoration: none;
-  padding: 10px 0;
-  display: block;
+footer {
   text-align: center;
+}
+
+footer ul {
+  display: inline-block;
+  list-style-type: none;
+}
+
+footer ul li {
+  display: inline-block;
+}
+
+footer ul li a {
+  text-decoration: none;
+  padding: 10px 20px;
 }
 
 article.story {

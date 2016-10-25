@@ -5,8 +5,16 @@
     <%== @story.body %>
   </div>
 
-  <%= link_to "View Original", @story.url, class: "story__link--original" %>
 </article>
+
+<footer>
+  <nav>
+    <ul>
+      <li><%= link_to "Back", root_path %></li>
+      <li><%= link_to "View Original", @story.url, class: "story__link--original" %></li>
+    </ul>
+  </nav>
+</footer>
 
 <script type="text/javascript">
   $(function() {
