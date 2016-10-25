@@ -92,7 +92,7 @@ module NhkNewsEasy
   end
 
   class Fetcher
-    BASE_URL = "http://www3.nhk.or.jp/news/easy/news-list.json?_=1477355365671"
+    BASE_URL = "http://www3.nhk.or.jp/news/easy/news-list.json?_="
     DEFAULT_ENCODING = "UTF-8"
     BOM = "\xEF\xBB\xBF".force_encoding(DEFAULT_ENCODING)
 
