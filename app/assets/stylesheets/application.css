@@ -41,6 +41,13 @@ body {
   display: block;
 }
 
+.story__link--original {
+  text-decoration: none;
+  padding: 10px 0;
+  display: block;
+  text-align: center;
+}
+
 article.story {
   width: calc(100% - 100px);
   margin: 0 50px;

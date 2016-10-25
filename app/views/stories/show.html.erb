@@ -4,4 +4,6 @@
   <div class="story"%>
     <%== @story.body %>
   </div>
+
+  <%= link_to "View Original", @story.url, class: "story__link--original" %>
 </article>
