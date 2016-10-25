@@ -91,7 +91,7 @@ module NhkNewsEasy
     end
   end
 
-  class Fetcher
+  class FeedFetcher
     BASE_URL = "http://www3.nhk.or.jp/news/easy/news-list.json?_="
     DEFAULT_ENCODING = "UTF-8"
     BOM = "\xEF\xBB\xBF".force_encoding(DEFAULT_ENCODING)

@@ -7,7 +7,7 @@ module NhkNewsEasy
     end
 
     def refresh
-      Fetcher.new.fetch_stories.each do |story|
+      FeedFetcher.new.fetch_stories.each do |story|
         find_or_create_story(story.to_h)
       end
     end
