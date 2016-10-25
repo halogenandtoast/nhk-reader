@@ -69,3 +69,20 @@ article.story p {
 article.story h1 {
   text-align: center;
 }
+
+.colorL {
+  color: #0041ff;
+}
+
+.colorN {
+  color: #b817af;
+}
+
+.colorC {
+  color: #08a2f1;
+}
+
+.lookup {
+  text-decoration: underline;
+  cursor: pointer;
+}

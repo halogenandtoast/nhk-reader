@@ -21,19 +21,30 @@ module NhkNewsEasy
   end
 
   class Sanitizer
-    PERMITTED_TAGS = %w(ruby rt p)
+    PERMITTED_TAGS = %w(ruby rt p span)
+    PERMITTED_ATTRIBUTES = {'span' => ['class']}
 
     def initialize(html)
       @html = html
     end
 
     def sanitize
-      no_output { Sanitize.fragment(html, elements: PERMITTED_TAGS) }
+      no_output do
+        Sanitize.fragment(
+          html_with_lookup,
+          elements: PERMITTED_TAGS,
+          attributes: PERMITTED_ATTRIBUTES
+        )
+      end
     end
 
     private
 
     attr_reader :html
+
+    def html_with_lookup
+      html.gsub(/<a[^>]*>/, "<span class=\"lookup\">").gsub("</a>", "</span>")
+    end
 
     def no_output
       begin
