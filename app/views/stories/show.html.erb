@@ -1,5 +1,5 @@
 <article class="story">
-  <h1><%== @story.title_with_ruby %></h1>
+  <h1><%== @story.title_with_ruby.gsub("　", "<br>") %></h1>
 
   <div class="story"%>
     <%== @story.body %>
