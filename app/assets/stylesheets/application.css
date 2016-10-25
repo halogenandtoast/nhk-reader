@@ -15,7 +15,7 @@
  */
 
 body {
-  font-size: 3em;
+  font-size: 1.4em;
   font-family: sans-serif;
   background-color: #fbf2e0;
   color: #2f4f4f;
@@ -49,8 +49,17 @@ body {
 }
 
 article.story {
-  width: calc(100% - 100px);
-  margin: 0 50px;
+  width: calc(100% - 200px);
+  margin: 0 100px;
+}
+
+@media only screen 
+and (max-device-width : 736px) {
+  article.story {
+    font-size: 3em;
+    width: calc(100% - 100px);
+    margin: 0 50px;
+  }
 }
 
 article.story p {
