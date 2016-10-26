@@ -10,6 +10,8 @@ gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 gem 'nokogiri'
 gem 'sanitize'
+gem 'kaminari'
+gem 'redis'
 group :development, :test do
   gem 'byebug', platform: :mri
   gem 'pry'

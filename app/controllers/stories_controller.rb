@@ -11,7 +11,7 @@ class StoriesController < ApplicationController
 
   def fetch_stories
     refresh_stories if needs_refresh?
-    Story.by_publication_date
+    Story.by_publication_date.page(params[:page])
   end
 
   def needs_refresh?
