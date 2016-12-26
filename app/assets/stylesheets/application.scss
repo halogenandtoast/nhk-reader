@@ -35,8 +35,9 @@ a:visited { color: $visited-color; }
       text-align: center;
       background-color: darken($background-color, 60%);
       color: lighten($background-color, 10%);
-      padding: 16px 0;
-      margin-bottom: 16px;
+      padding: 8px 0;
+      margin-bottom: 8px;
+      font-size: 1em;
     }
   }
 
@@ -48,9 +49,9 @@ a:visited { color: $visited-color; }
     width: calc(100% - 16px);
 
     &__item {
-      padding-top: 16px;
+      padding-top: 8px;
       background-color: darken($background-color, 10%);
-      margin-bottom: 16px;
+      margin-bottom: 8px;
       a {
         font-weight: bold;
         text-decoration: none;
@@ -66,7 +67,7 @@ a:visited { color: $visited-color; }
 }
 
 footer {
-  margin-top: 64px;
+  margin-top: 32px;
   text-align: center;
 }
 
@@ -74,23 +75,17 @@ footer ul {
   display: block;
   list-style-type: none;
   text-align: center;
+  padding: 0;
+  margin: 0;
 
   li {
     display: block;
     background-color: darken($background-color, 5%);
+    box-sizing: border-box;
     padding: 8px 16px;
-    margin-bottom: 16px;
-    width: 90%;
-    @media only screen and (max-device-width : $break-small) {
-      font-size: 2em;
-      margin-bottom: 32px;
-      padding: 16px 32px;
-    }
-    @media only screen and (max-width : $break-small) {
-      font-size: 2em;
-      margin-bottom: 32px;
-      padding: 16px 32px;
-    }
+    margin-bottom: 8px;
+    width: 100%;
+    font-size: 0.6em !important;
 
     a {
       color: darken($background-color, 50%) !important;
@@ -100,28 +95,21 @@ footer ul {
   }
 }
 
+a[rel=previous] + a[rel=next] {
+  margin-left: 16px;
+}
+
 h1 { text-align: center; }
 
 article.story {
-  width: calc(100% - 192px);
-  margin: 0 96px;
+  width: calc(100% - 32px);
+  margin: 0 16px;
   p { text-align: justify; }
-  @media only screen and (max-device-width : $break-small) {
-    font-size: 2em;
-    width: calc(100% - 96px);
-    margin: 0 48px;
-  }
-  @media only screen and (max-width : $break-small) {
-    font-size: 2em;
-    width: calc(100% - 96px);
-    margin: 0 48px;
-  }
 }
 
 nav.pagination {
   margin: 0 auto;
   text-align: center;
-  font-size: 1.5em;
 }
 
 .colorL {
