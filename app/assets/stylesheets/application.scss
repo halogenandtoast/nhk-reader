@@ -48,20 +48,26 @@ footer ul {
 
   li {
     display: block;
+    background-color: darken($background-color, 5%);
+    padding: 8px 16px;
+    margin-bottom: 16px;
+    width: 90%;
+    @media only screen and (max-device-width : $break-small) {
+      font-size: 2em;
+      margin-bottom: 32px;
+      padding: 16px 32px;
+    }
+    @media only screen and (max-width : $break-small) {
+      font-size: 2em;
+      margin-bottom: 32px;
+      padding: 16px 32px;
+    }
   }
 
   a {
     color: darken($background-color, 50%);
     font-weight: bold;
     text-decoration: none;
-    display: inline-block;
-    width: 90%;
-    padding: 8px 20px;
-    background-color: darken($background-color, 5%);
-    margin-bottom: 16px;
-    @media only screen and (max-device-width : $break-small) {
-      font-size: 2em;
-    }
   }
 }
 
@@ -71,6 +77,11 @@ article.story {
   p { text-align: justify; }
   h1 { text-align: center; }
   @media only screen and (max-device-width : $break-small) {
+    font-size: 2em;
+    width: calc(100% - 96px);
+    margin: 0 48px;
+  }
+  @media only screen and (max-width : $break-small) {
     font-size: 2em;
     width: calc(100% - 96px);
     margin: 0 48px;
