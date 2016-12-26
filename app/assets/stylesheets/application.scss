@@ -105,8 +105,7 @@ h1 { text-align: center; }
 
 article.story {
   @media only screen and (max-device-width: $break-small) {
-    font-size: 1em;
-    font-size: 4vw;
+    font-size: 7vw;
   }
   width: calc(100% - 32px);
   margin: 0 16px;
