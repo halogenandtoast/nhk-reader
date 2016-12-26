@@ -13,7 +13,7 @@ $link-color: #5889e9;
 $visited-color: #E4207D;
 $item-color: #FAF672;
 
-$break-small: 736px;
+$break-small: 320pt;
 
 body {
   font-size: 1.4em;
@@ -104,8 +104,10 @@ a[rel=previous] + a[rel=next] {
 h1 { text-align: center; }
 
 article.story {
-  font-size: 1em;
-  font-size: 4vw;
+  @media only screen and (max-width: $break-small) {
+    font-size: 1em;
+    font-size: 4vw;
+  }
   width: calc(100% - 32px);
   margin: 0 16px;
   p { text-align: justify; }
