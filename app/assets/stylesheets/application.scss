@@ -3,13 +3,15 @@
  *= require_self
  */
 
-$background-color: #fbf2e0;
+$background-color: #fef8e8;
 $foreground-color: #2f4f4f;
 $location-color: #0041ff;
+$header-color: #9Bd855;
 $name-color: #b817af;
 $company-color: #08a2f1;
 $link-color: #5889e9;
-$visited-color: #7058e9;
+$visited-color: #E4207D;
+$item-color: #FAF672;
 
 $break-small: 736px;
 
@@ -33,7 +35,7 @@ a:visited { color: $visited-color; }
       width: calc(100% - 16px);
       margin: 0 auto;
       text-align: center;
-      background-color: darken($background-color, 60%);
+      background-color: $header-color;
       color: lighten($background-color, 10%);
       padding: 8px 0;
       margin-bottom: 8px;
@@ -102,6 +104,8 @@ a[rel=previous] + a[rel=next] {
 h1 { text-align: center; }
 
 article.story {
+  font-size: 1em;
+  font-size: 3vw;
   width: calc(100% - 32px);
   margin: 0 16px;
   p { text-align: justify; }
