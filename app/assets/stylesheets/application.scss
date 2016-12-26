@@ -8,6 +8,8 @@ $foreground-color: #2f4f4f;
 $location-color: #0041ff;
 $name-color: #b817af;
 $company-color: #08a2f1;
+$link-color: #5889e9;
+$visited-color: #7058e9;
 
 $break-small: 736px;
 
@@ -17,6 +19,9 @@ body {
   background-color: $background-color;
   color: $foreground-color;
 }
+
+a { color: $link-color; }
+a:visited { color: $visited-color; }
 
 .stories {
   text-align: center
@@ -28,7 +33,7 @@ body {
       width: 90%;
       margin: 0 auto;
       text-align: center;
-      background-color: darken($background-color, 70%);
+      background-color: darken($background-color, 60%);
       color: lighten($background-color, 10%);
       padding: 16px 0;
       margin-bottom: 16px;
@@ -53,6 +58,7 @@ body {
         display: inline-block;
         width: 100%;
         font-size: 1.5em;
+        font-size: 3vw;
       }
     }
   }
@@ -84,12 +90,12 @@ footer ul {
       margin-bottom: 32px;
       padding: 16px 32px;
     }
-  }
 
-  a {
-    color: darken($background-color, 50%);
-    font-weight: bold;
-    text-decoration: none;
+    a {
+      color: darken($background-color, 50%) !important;
+      font-weight: bold;
+      text-decoration: none;
+    }
   }
 }
 
