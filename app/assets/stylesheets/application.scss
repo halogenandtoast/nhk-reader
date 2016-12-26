@@ -67,7 +67,7 @@ article.story {
   margin: 0 96px;
   p { text-align: justify; }
   h1 { text-align: center; }
-  @media only screen and (max-width : $break-small) {
+  @media only screen and (max-device-width : $break-small) {
     font-size: 2em;
     width: calc(100% - 96px);
     margin: 0 48px;
