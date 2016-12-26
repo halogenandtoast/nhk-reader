@@ -1,8 +1,17 @@
 <div class="stories">
   <h1>ニュース</h1>
-  <ul class="stories__list">
-    <%= render @stories %>
-  </ul>
 
-  <%= paginate @stories %>
+  <% @stories.group_by(&:published_on).each do |date, stories| %>
+    <div class="stories__group">
+      <h2><%= date %></h2>
+      <ul class="stories__list">
+        <%= render stories %>
+      </ul>
+    </div>
+  <% end %>
+
+  <nav class="pagination">
+    <%= link_to_previous_page @stories, 'Previous' %>
+    <%= link_to_next_page @stories, 'Next' %>
+  </nav>
 </div>

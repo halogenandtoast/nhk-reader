@@ -11,7 +11,6 @@ $company-color: #08a2f1;
 
 $break-small: 736px;
 
-
 body {
   font-size: 1.4em;
   font-family: sans-serif;
@@ -23,15 +22,38 @@ body {
   text-align: center
   h1 { text-align: center; }
 
-  &__list {
-    display: inline-block;
-    text-align: left;
-    list-style: none;
+  &__group {
+    margin: 0 auto;
+    h2 {
+      width: 90%;
+      margin: 0 auto;
+      text-align: center;
+      background-color: darken($background-color, 70%);
+      color: lighten($background-color, 10%);
+      padding: 16px 0;
+      margin-bottom: 16px;
+    }
+  }
 
-    &__item a {
-      text-decoration: none;
-      padding: 8px 0;
-      display: block;
+  &__list {
+    display: block;
+    list-style: none;
+    padding: 0;
+    margin: 0 auto;
+    width: 90%;
+
+    &__item {
+      padding-top: 16px;
+      background-color: darken($background-color, 10%);
+      margin-bottom: 16px;
+      a {
+        text-decoration: none;
+        padding: 8px 16px;
+        box-sizing: border-box;
+        display: inline-block;
+        width: 100%;
+        font-size: 1.5em;
+      }
     }
   }
 }
@@ -71,11 +93,12 @@ footer ul {
   }
 }
 
+h1 { text-align: center; }
+
 article.story {
   width: calc(100% - 192px);
   margin: 0 96px;
   p { text-align: justify; }
-  h1 { text-align: center; }
   @media only screen and (max-device-width : $break-small) {
     font-size: 2em;
     width: calc(100% - 96px);
@@ -88,6 +111,11 @@ article.story {
   }
 }
 
+nav.pagination {
+  margin: 0 auto;
+  text-align: center;
+  font-size: 1.5em;
+}
 
 .colorL {
   color: $location-color;
