@@ -11,16 +11,30 @@ class Story < ApplicationRecord
   end
 
   def body
-    fetched? ? super : fetch_body
+    fetched? ? super : fetch { super }
   end
+
+  def image
+    fetched? ? super : fetch { super }
+  end
+  alias has_image? image
 
   private
 
+  def fetch
+    fetch_body
+    fetch_image
+    update(fetched: true)
+    yield
+  end
+
   def fetch_body
     fetcher = NhkNewsEasy::BodyFetcher.new(url)
+    self.body = fetcher.fetch
+  end
 
-    fetcher.fetch.tap do |new_body|
-      update(body: new_body, fetched: true)
-    end
+  def fetch_image
+    fetcher = NhkNewsEasy::ImageFetcher.new(data["news_web_image_uri"])
+    self.image = fetcher.fetch
   end
 end

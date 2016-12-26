@@ -58,7 +58,8 @@ module NhkNewsEasy
         title_with_ruby: title_with_ruby,
         news_id: id,
         published_at: date,
-        url: url
+        url: url,
+        data: json
       }
     end
 
