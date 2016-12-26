@@ -59,6 +59,9 @@ footer ul {
     padding: 8px 20px;
     background-color: darken($background-color, 5%);
     margin-bottom: 16px;
+    @media only screen and (max-device-width : $break-small) {
+      font-size: 2em;
+    }
   }
 }
 
