@@ -3,7 +3,9 @@ module NhkNewsEasy
     DEFAULT_ATTRIBUTES = { fetched: false }
 
     def needs_refresh?
-      news_might_be_available? && no_stories_fetched_today? && has_not_fetched_recently?
+      news_might_be_available? &&
+        no_stories_fetched_today? &&
+        has_not_fetched_recently?
     end
 
     def refresh

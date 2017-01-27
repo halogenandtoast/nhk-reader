@@ -1,4 +1,5 @@
 require "open-uri"
+require "buffer_utils"
 
 module NhkNewsEasy
   # URL
@@ -37,7 +38,7 @@ module NhkNewsEasy
     end
 
     def date
-      DateTime.parse(json["news_prearranged_time"])
+      json["news_prearranged_time"].to_datetime
     end
 
     def title
@@ -94,8 +95,6 @@ module NhkNewsEasy
 
   class FeedFetcher
     BASE_URL = "http://www3.nhk.or.jp/news/easy/news-list.json?_="
-    DEFAULT_ENCODING = "UTF-8"
-    BOM = "\xEF\xBB\xBF".force_encoding(DEFAULT_ENCODING)
 
     def fetch_stories
       Feed.new(fetch_json).stories
@@ -105,7 +104,7 @@ module NhkNewsEasy
 
     def fetch_json
       io = open(url)
-      contents = io.read.force_encoding(DEFAULT_ENCODING).sub!(BOM, "")
+      contents = BufferUtils.strip_byte_order_marker(io.read)
       JSON.parse(contents).first # The whole structure is wrapped in an array for some reason
     end
 

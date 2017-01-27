@@ -1,4 +1,5 @@
 require "open-uri"
+require "base64_image"
 
 module NhkNewsEasy
   class ImageFetcher
@@ -7,11 +8,7 @@ module NhkNewsEasy
     end
 
     def fetch
-      if url =~ URI::regexp
-        handle = open(url)
-        base64 = Base64.encode64(handle.read)
-        "data:#{handle.content_type};base64,#{base64}"
-      end
+      base64_image.to_s if url =~ URI::regexp
     rescue OpenURI::HTTPError
       nil
     end
@@ -19,5 +16,21 @@ module NhkNewsEasy
     private
 
     attr_reader :url
+
+    def base64_image
+      Base64Image.new(content_type, image_data)
+    end
+
+    def content_type
+      @_content_type ||= handle.content_type
+    end
+
+    def image_data
+      @_image_data ||= handle.read
+    end
+
+    def handle
+      @_handle ||= open(url)
+    end
   end
 end
